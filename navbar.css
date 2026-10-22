@@ -1,0 +1,23 @@
+/* abdallah law firm - NAVBAR (sidebar on desktop, drop-down on mobile) */
+.site-header{view-transition-name:side}.brand{view-transition-name:brand}.ind{view-transition-name:navind}
+.site-header{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,#2b1a12,#3b2416);color:#f1e3cf}
+.side-in{display:flex;align-items:center;gap:.8rem;height:68px;padding:0 4%}
+.brand{display:flex;gap:.7rem;align-items:center;color:#f8f1e7;text-decoration:none;margin-right:auto}
+.mono{width:42px;height:42px;display:grid;place-items:center;background:var(--hazel);color:var(--espresso);font:700 1.6rem var(--fh);border-radius:12px;transition:.4s}
+.brand:hover .mono{background:var(--hazel-l);transform:rotate(-8deg)}
+.brand b{display:block;font:600 1.5rem/1 var(--fh);letter-spacing:.03em}
+.brand small{font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--hazel-l)}
+#nav{position:fixed;inset:68px 0 auto 0;background:#2b1a12;max-height:0;overflow:hidden;transition:max-height .45s}
+#nav.open{max-height:85vh}
+#nav ul{list-style:none;padding:1rem 4%;display:grid}
+#nav a{display:block;position:relative;padding:.8rem 0;color:#e9d9c3;text-decoration:none;font:500 1.4rem var(--fh);border-bottom:1px solid #46301f;transition:color .3s,padding .3s}
+#nav a:hover,#nav a.active{color:#fff;padding-left:.6rem}
+.ind{position:absolute;left:-1.2rem;top:20%;bottom:20%;width:4px;border-radius:4px;background:var(--hazel)}
+.side-foot{padding:0 4% 1.2rem;font-size:.85rem;color:#b9a48c;line-height:1.7}
+.theme{order:2;background:none;border:1.5px solid #5a4030;color:#f1e3cf;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:1.1rem;transition:.4s}.theme:hover{border-color:var(--hazel);transform:rotate(180deg)}
+.burger{order:3;width:42px;height:42px;background:none;border:0;cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger i{display:block;width:24px;height:2px;background:#f1e3cf;transition:.3s}
+.burger[aria-expanded=true] i:nth-child(1){transform:translateY(7px) rotate(45deg)}.burger[aria-expanded=true] i:nth-child(2){opacity:0}.burger[aria-expanded=true] i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.site-header{transition:background .4s,box-shadow .4s}
+@media(min-width:1000px){.site-header{position:fixed;inset:0 0 auto 0;width:auto;background:transparent;transition:background .4s,box-shadow .4s}.site-header.scrolled{background:rgba(43,26,18,.96);backdrop-filter:blur(8px);box-shadow:0 6px 24px rgba(0,0,0,.25)}.side-in{height:76px;padding:0 5%}.burger,.side-foot{display:none}.brand{margin-right:auto}#nav{position:static;max-height:none;overflow:visible;background:none}#nav ul{display:flex;gap:2rem;padding:0}#nav a{border:0;padding:.4rem 0;font-size:1.25rem}#nav a:hover,#nav a.active{padding-left:0;color:var(--hazel-l)}.ind{left:0;right:0;top:auto;bottom:-2px;width:auto;height:2px}.theme{order:3}}
+@media(min-width:1000px){body:not(:has(.hero2)){padding-top:76px}body:not(:has(.hero2)) .site-header{background:#2b1a12}}

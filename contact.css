@@ -1,0 +1,14 @@
+/* abdallah law firm - CONTACT page (contact.html) */
+.c-wrap{display:grid;gap:1.5rem}@media(min-width:900px){.c-wrap{grid-template-columns:.8fr 1.2fr}}
+.c-info{background:linear-gradient(160deg,var(--brown),var(--espresso));color:var(--hazel-l);border-radius:var(--r);padding:2.2rem}.c-info h2{color:#f8f1e7;margin-bottom:1.2rem}.c-info a{color:#f8f1e7}.c-info .list li::before{color:var(--hazel)}
+.c-form{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:2.2rem;box-shadow:var(--sh)}.c-form h2{margin-bottom:1.2rem}
+.form{display:grid;gap:1.1rem}label{font-weight:500;display:block;margin-bottom:.35rem;color:var(--ink)}
+input,select,textarea{width:100%;padding:.85rem 1rem;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--text);font:inherit;transition:border-color .3s,box-shadow .3s}
+input:focus,select:focus,textarea:focus{border-color:var(--brown2);box-shadow:0 0 0 4px rgba(176,137,104,.3);outline:0}
+input.invalid,select.invalid,textarea.invalid{border-color:#a3261e}
+.chk{display:flex;gap:.7rem;align-items:flex-start;font-weight:400}.chk input{width:auto;margin-top:.45rem}
+.err{color:#a3261e;font-size:.85rem;min-height:1.2em}[data-theme=dark] .err{color:#ff9d8f}
+.ok{display:none;padding:1rem 1.2rem;background:#e8f0df;color:#243d14;border-radius:12px;font-weight:500}.ok.show{display:block;animation:up .6s}
+/* Google map */
+.map{display:block;width:100%;height:420px;border:0;border-radius:var(--r);box-shadow:var(--sh)}
+.map-link{display:inline-block;margin-top:1rem;color:var(--accent);font-weight:500}

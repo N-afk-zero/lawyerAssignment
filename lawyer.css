@@ -1,0 +1,5 @@
+/* abdallah law firm - MEET THE LAWYER page (lawyer.html) */
+.duo{display:grid;gap:2.5rem}@media(min-width:900px){.duo{grid-template-columns:320px 1fr}.duo aside{position:sticky;top:2rem;align-self:start}}
+.side-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem;box-shadow:var(--sh)}
+.portrait{margin:0 0 1.5rem;border-radius:999px 999px 18px 18px;overflow:hidden;background:linear-gradient(165deg,var(--hazel),var(--brown));}.portrait img{display:block;width:100%;height:auto}
+.side-card h3{margin-bottom:.8rem}.duo h3{margin:2rem 0 .8rem}
