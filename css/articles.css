@@ -1,0 +1,7 @@
+/* abdallah law firm - ARTICLES page (articles.html) */
+.thumb{height:170px;border-radius:16px;margin-bottom:1.2rem;background:linear-gradient(135deg,var(--c),var(--espresso));position:relative;overflow:hidden}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}.card:hover .thumb img{transform:scale(1.06)}
+.thumb::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(248,241,231,.4),transparent 55%);transition:transform .6s}.card:hover .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}.card:hover .thumb img{transform:scale(1.06)}
+.thumb::after{transform:scale(1.5)}
+@media(min-width:800px){.mag>:first-child{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;column-gap:2.5rem;align-content:center}.mag>:first-child .thumb{grid-row:1/7;height:100%;min-height:280px;margin:0}.mag>:first-child>:not(.thumb){grid-column:2}}
+.meta{font-size:.8rem;color:var(--accent);font-weight:500;letter-spacing:.1em;text-transform:uppercase}

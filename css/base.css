@@ -1,0 +1,62 @@
+/* abdallah law firm - BASE (shared by every page): tokens, reset, typography, buttons, shared components, footer */
+:root{--espresso:#2b1a12;--brown:#5c3a21;--brown2:#7a4e2d;--hazel:#b08968;--hazel-l:#e0c9ad;--bg:#f8f1e7;--latte:#efe2d0;--card:#fffaf2;--ink:#3b2416;--text:#3b2a20;--muted:#6b5645;--accent:#8a5a34;--line:#e5d5bf;--r:22px;--sh:0 14px 34px rgba(60,36,20,.1);--fh:'Cormorant Garamond',Georgia,serif;--fb:'Jost',system-ui,sans-serif}
+[data-theme=dark]{--bg:#1b110b;--latte:#24160e;--card:#2a1a11;--ink:#f3e8d8;--text:#e8dccb;--muted:#bba892;--accent:#dcb98f;--line:#3d2a1d;--sh:0 14px 34px rgba(0,0,0,.45)}
+/* match & move (page transitions) */
+@view-transition{navigation:auto}
+.ptitle h1{view-transition-name:title}
+::view-transition-group(*){animation-duration:.8s;animation-timing-function:cubic-bezier(.7,0,.2,1)}
+::view-transition-old(root){animation:vtout .45s both}::view-transition-new(root){animation:vtin .8s both}
+@keyframes vtout{to{opacity:0;transform:translateY(-14px)}}@keyframes vtin{from{opacity:0;transform:translateY(26px)}}
+@supports not (view-transition-name:x){body{animation:vtin .7s both}}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+/* reset + typography */
+*,*::before,*::after{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 1.02rem/1.75 var(--fb);background:var(--bg);color:var(--text);transition:background .4s,color .4s}
+svg,img{max-width:100%}
+.wrap{width:min(1080px,90%);margin-inline:auto}
+h1,h2,h3{font-family:var(--fh);font-weight:600;line-height:1.1;color:var(--ink)}
+section{padding:clamp(3rem,7vw,5.5rem) 0}
+:focus-visible{outline:3px solid var(--hazel);outline-offset:3px}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;color:#000;padding:.5rem 1rem;z-index:99}
+.eyebrow{color:var(--accent);font-weight:500;letter-spacing:.22em;text-transform:uppercase;font-size:.78rem}
+/* buttons */
+.btn{display:inline-block;padding:.95rem 1.9rem;border-radius:99px;background:linear-gradient(135deg,var(--brown2),var(--brown));color:#fbf3e6;font:500 1rem var(--fb);letter-spacing:.03em;text-decoration:none;border:0;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(92,58,33,.35)}
+.btn.ghost{background:none;border:1.5px solid var(--ink);color:var(--ink)}.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+/* page titles */
+.ptitle{padding:clamp(3rem,7vw,5rem) 0 1rem}.ptitle h1{font-size:clamp(2.6rem,6vw,4.6rem);margin-top:.5rem;padding-bottom:1.2rem;border-bottom:1px solid var(--line)}
+/* shared content blocks */
+.sh{margin:0 0 2.5rem;max-width:620px}.sh h2{font-size:clamp(2rem,4.2vw,3.1rem);margin:.5rem 0}.sh p{color:var(--muted)}
+.sh h2::after{content:"";display:block;width:50px;height:3px;border-radius:9px;margin-top:.9rem;background:var(--hazel);transition:width .6s}.sh.in h2::after{width:100px}
+.alt{background:var(--latte)}
+.tag{display:inline-block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;background:#f0d9b5;color:#4a2f12;padding:.2rem .7rem;border-radius:99px;margin-bottom:.8rem;font-weight:500}
+.more{display:inline-block;margin-top:1rem;color:var(--accent);font-weight:500}
+.list{list-style:none;display:grid;gap:.8rem}.list li{padding-left:1.8rem;position:relative}.list li::before{content:"❖";position:absolute;left:0;color:var(--hazel)}
+/* stat tiles (home + lawyer) */
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+@media(min-width:800px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;color:var(--muted);box-shadow:var(--sh);transition:transform .35s}.tile:hover{transform:translateY(-6px)}
+.tile b{display:block;font:600 clamp(2.4rem,4vw,3.4rem)/1.1 var(--fh);color:var(--accent)}
+/* cards + grids (home services + articles) */
+.grid,.bento{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{--c:var(--hazel);display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.8rem;box-shadow:var(--sh);color:inherit;text-decoration:none;transition:transform .35s,box-shadow .35s}
+.grid>:nth-child(4n+2),.bento>:nth-child(4n+2){--c:var(--brown2)}.grid>:nth-child(4n+3),.bento>:nth-child(4n+3){--c:#c9a27a}.grid>:nth-child(4n+4),.bento>:nth-child(4n+4){--c:var(--brown)}
+.card:hover{transform:translateY(-8px);box-shadow:0 22px 44px color-mix(in srgb,var(--c) 30%,transparent)}
+.card .no{display:inline-grid;place-items:center;width:50px;height:50px;border-radius:50%;font:600 1.4rem var(--fh);color:var(--ink);background:color-mix(in srgb,var(--c) 28%,transparent);transition:.4s}
+.card:hover .no{background:var(--brown);color:#f8f1e7;transform:rotate(-12deg) scale(1.1)}
+.card h3{margin:.6rem 0 .4rem;font-size:1.55rem}.card p{color:var(--muted);font-size:.96rem}
+/* call-to-action panel (home, lawyer, expertise) */
+.cta-panel{background:linear-gradient(120deg,var(--brown),var(--espresso));color:var(--hazel-l);border-radius:32px;padding:clamp(2.5rem,6vw,4.5rem);text-align:center}
+.cta-panel h2{color:#f8f1e7;font-size:clamp(2rem,4vw,3rem);margin-bottom:.8rem}.cta-panel p{margin-bottom:1.8rem}.cta-panel .btn{background:var(--hazel-l);color:var(--espresso)}
+/* footer */
+.site-footer{background:var(--espresso);color:#cdb9a3;padding:3.5rem 0 1.5rem}
+.fgrid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.site-footer h3{color:#f8f1e7;font-size:1.4rem;margin-bottom:.8rem}.site-footer a{color:#cdb9a3;text-decoration:none;transition:color .3s}.site-footer a:hover{color:var(--hazel-l)}
+.site-footer ul{list-style:none;display:grid;gap:.4rem}.disc{border-top:1px solid #4a3324;margin-top:2.5rem;padding-top:1.2rem;font-size:.85rem;text-align:center}
+/* back-to-top + scroll progress */
+.top{position:fixed;right:1.2rem;bottom:1.2rem;width:48px;height:48px;border-radius:50%;border:0;background:var(--brown);color:var(--hazel-l);font-size:1.4rem;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(20px);transition:.4s;z-index:40}.top.show{opacity:1;visibility:visible;transform:none}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:70;background:linear-gradient(90deg,var(--hazel),var(--brown2));transition:width .15s}
+/* scroll reveal */
+.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1),box-shadow .35s}.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .reveal{opacity:1;transform:none}}

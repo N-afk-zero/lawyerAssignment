@@ -1,0 +1,6 @@
+/* abdallah law firm - EXPERTISE page (expertise.html) */
+.exp{display:grid;gap:1.5rem}@media(min-width:900px){.exp{grid-template-columns:210px 1fr}.exp aside{position:sticky;top:2rem;align-self:start}#idx{display:grid!important;border-left:2px solid var(--line)}#idx a{border-radius:0!important;margin-left:-2px;border-left:2px solid transparent!important}}
+#idx{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.5rem}#idx a{white-space:nowrap;padding:.45rem 1rem;color:var(--muted);text-decoration:none;font-size:.92rem;border:1px solid var(--line);border-radius:99px;transition:.3s}
+#idx a.on,#idx a:hover{color:var(--ink);border-color:var(--hazel)}@media(min-width:900px){#idx a.on,#idx a:hover{padding-left:1.3rem}}
+.row{display:grid;grid-template-columns:70px 1fr;gap:1rem;padding:2rem 0;border-bottom:1px solid var(--line);scroll-margin-top:30px}.row:first-child{padding-top:0}
+.row .no{font:600 3.2rem/1 var(--fh);color:var(--hazel)}.row h2{font-size:2rem;margin-bottom:.4rem}.row p{color:var(--muted);max-width:62ch}
